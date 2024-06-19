@@ -1,3 +1,5 @@
+# (Modified) script from https://github.com/westenfelder
+
 etaf 4; echo "\nLinux Pwn/RE Install Script"; tput setaf 7;
 tput setaf 3; echo "\nRunning as admin? [y/n] \c"; tput setaf 7;
 read admin
