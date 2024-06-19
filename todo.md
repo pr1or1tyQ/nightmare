@@ -1,0 +1,1 @@
+- make windows_vm_tools.bat : easily install needed tools onto a windows vm
