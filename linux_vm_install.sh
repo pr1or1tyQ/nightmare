@@ -33,10 +33,10 @@ then
     snap install cmake --classic
 
     tput setaf 2; echo "\nInstall gcc"; tput setaf 7;
-    apt install gcc
+    apt install gcc -y
 
     tput setaf 2; echo "\nInstall gdb"; tput setaf 7;
-    apt install gdb
+    apt install gdb -y
     
     # tput setaf 2; echo "\nInstall PEDA"; tput setaf 7;
     # git clone https://github.com/longld/peda.git /home/$SUDO_USER/peda
