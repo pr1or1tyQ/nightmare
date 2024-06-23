@@ -51,7 +51,8 @@ then
     tput setaf 2; echo "\nInstall radare2"; tput setaf 7;
     git clone https://github.com/radareorg/radare2
     cd radare2
-    sys/install.sh
+    # This install script cannot be run as root
+    sudo -u $SUDO_USER bash -c "sys/install.sh"
 
     tput setaf 2; echo "\nInstall r2ghidra"; tput setaf 7;
     r2pm update
@@ -109,19 +110,24 @@ then
 
     # Install python packages
     tput setaf 2; echo "\nInstall z3"; tput setaf 7;
-    sudo -u $SUDO_USER pip install z3-solver
+    apt install python3-z3-solver
+    #sudo -u $SUDO_USER pip install z3-solver
 
     tput setaf 2; echo "\nInstall angr"; tput setaf 7;
-    sudo -u $SUDO_USER pip install angr
+    apt install python3-angr
+    #sudo -u $SUDO_USER pip install angr
 
     tput setaf 2; echo "\nInstall angr management"; tput setaf 7;
-    sudo -u $SUDO_USER pip install angr-management
+    apt install python3-angr-management
+    #sudo -u $SUDO_USER pip install angr-management
 
     tput setaf 2; echo "\nInstall pwntools"; tput setaf 7;
-    sudo -u $SUDO_USER pip install pwntools
+    apt install python3-pwntools
+    #sudo -u $SUDO_USER pip install pwntools
 
     tput setaf 2; echo "\nInstall ropper"; tput setaf 7;
-    sudo -u $SUDO_USER pip install ropper
+    apt install python3-ropper
+    #sudo -u $SUDO_USER pip install ropper
     
     
 
