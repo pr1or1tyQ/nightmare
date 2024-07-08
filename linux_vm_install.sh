@@ -102,10 +102,14 @@ then
     apt install python3
 
     # tput setaf 2; echo "\nInstall python virtual environments"; tput setaf 7;
-    # apt install python3.10-venv -y
+    apt install python3.12-venv -y
 
-    tput setaf 2; echo "\nInstall pip"; tput setaf 7;
-    apt install pip -y
+    # tput setaf 2; echo "\nCreate and Activate python virtual envrionment"; tput setaf 7;
+    python3 -m venv ./venv
+    source ./venv/bin/activate
+
+    # tput setaf 2; echo "\nInstall pip"; tput setaf 7;
+    # apt install pip -y
 
 
     # Install python packages
@@ -114,7 +118,8 @@ then
     #sudo -u $SUDO_USER pip install z3-solver
 
     tput setaf 2; echo "\nInstall angr"; tput setaf 7;
-    apt install python3-angr
+    pip install angr
+    #apt install python3-angr
     #sudo -u $SUDO_USER pip install angr
 
     tput setaf 2; echo "\nInstall angr management"; tput setaf 7;
@@ -122,11 +127,13 @@ then
     #sudo -u $SUDO_USER pip install angr-management
 
     tput setaf 2; echo "\nInstall pwntools"; tput setaf 7;
-    apt install python3-pwntools
+    pip install pwntools
+    #apt install python3-pwntools -y
     #sudo -u $SUDO_USER pip install pwntools
 
     tput setaf 2; echo "\nInstall ropper"; tput setaf 7;
-    apt install python3-ropper
+    pip install ropper
+    #apt install python3-ropper
     #sudo -u $SUDO_USER pip install ropper
     
     
@@ -145,8 +152,8 @@ then
     tput setaf 3; echo "Restart system now? [y/n] \c"; tput setaf 7;
     read restart
 
-    if [$restart = 'y']
-    then
-        reboot;
-    fi
+    # if [$restart = 'y']
+    # then
+    #     reboot;
+    # fi
 fi
